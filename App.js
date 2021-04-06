@@ -10,7 +10,7 @@ import GlobalStyle from "./Theme/globalStyle";
 export default function App() {
 	return (
 		<GlobalStyle>
-			<SafeAreaView>
+			<SafeAreaView style={{ flex: 1 }}>
 				<Header />
 				<Text>Open up App.js to start working on your app!</Text>
 

@@ -5,29 +5,32 @@
 		"android": "expo start --android",
 		"ios": "expo start --ios",
 		"web": "expo start --web",
-		"eject": "expo eject"
+		"eject": "expo eject",
+		"format": "yarn prettier --write ."
 	},
 	"dependencies": {
 		"axios": "^0.21.1",
+		"canvasjs-react-charts": "^1.0.5",
 		"date-fns": "^2.16.1",
 		"expo": "~39.0.2",
 		"expo-font": "~8.3.0",
 		"expo-status-bar": "~1.0.2",
+		"hoist-non-react-statics": "^3.3.2",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"react-icons": "^3.11.0",
 		"react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-		"react-native-chart-kit": "^6.10.1",
 		"react-native-gesture-handler": "~1.7.0",
-		"react-native-pure-chart": "^0.0.24",
-		"react-native-responsive-linechart": "^5.4.1",
+		"react-native-safe-area-context": "3.1.4",
 		"react-native-svg": "^12.1.0",
 		"react-native-svg-charts": "^5.4.0",
 		"react-native-web": "~0.13.12",
+		"react-native-webview": "10.7.0",
 		"styled-components": "^5.2.1"
 	},
 	"devDependencies": {
 		"@babel/core": "~7.9.0",
+		"@types/styled-components": "^5.1.7",
 		"prettier": "2.2.1"
 	},
 	"private": true
