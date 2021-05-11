@@ -7,6 +7,8 @@ import ChartDOM from "./Components/Chart/chart";
 
 import GlobalStyle from "./Theme/globalStyle";
 
+//teste pull request...
+
 export default function App() {
 	return (
 		<GlobalStyle>
