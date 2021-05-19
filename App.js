@@ -1,23 +1,35 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Text, SafeAreaView } from "react-native";
+import { Text, SafeAreaView, Button } from "react-native";
 
 import Header from "./Components/Head/Header";
 import ChartDOM from "./Components/Chart/chart";
 
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import List from "./Components/list/list";
+
 import GlobalStyle from "./Theme/globalStyle";
+
+const Stack = createStackNavigator();
 
 export default function App() {
 	return (
-		<GlobalStyle>
-			<SafeAreaView style={{ flex: 1 }}>
-				<Header />
-				<Text>Open up App.js to start working on your app!</Text>
+		<NavigationContainer>
+			<GlobalStyle>
+				<SafeAreaView style={{ flex: 1 }}>
+					<Stack.Navigator>
+						<Stack.Screen
+							name="bolo"
+							component={List}
+							options={{ title: "Ecg Remoto" }}
+						/>
+						<Stack.Screen name="chart" component={ChartDOM} />
+					</Stack.Navigator>
 
-				<ChartDOM />
-
-				<StatusBar style="dark" />
-			</SafeAreaView>
-		</GlobalStyle>
+					<StatusBar style="dark" />
+				</SafeAreaView>
+			</GlobalStyle>
+		</NavigationContainer>
 	);
 }
