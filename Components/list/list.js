@@ -33,15 +33,19 @@ export default class List extends Component {
 								onPress={() =>
 									navigation.navigate("chart", {
 										id: element["_id"],
+                                        resolution: element["resolution"],
+                                        sampling_rate: element["sampling_rate"]
 									})
 								}
 							>
-								{element["_id"]}
+								{element["userId"]}
 							</DataTable.Cell>
 							<DataTable.Cell
 								onPress={() =>
 									navigation.navigate("chart", {
 										id: element["_id"],
+                                        resolution: element["resolution"],
+                                        sampling_rate: element["sampling_rate"]
 									})
 								}
 							>

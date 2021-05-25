@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimensions, View } from "react-native";
+import { Dimensions, View,Text } from "react-native";
 
 import axios from "axios";
 
@@ -14,6 +14,7 @@ export class ChartDOM extends Component {
 	constructor(props) {
 		super(props);
 		console.log(this.props);
+        const { route } = this.props;
 
 		this.state = {
 			Component: null,
@@ -21,6 +22,7 @@ export class ChartDOM extends Component {
 			bpm: null,
 			paused: false,
 			data: [],
+            params : route.params
 		};
 
 		this.tooglePauseAnimation = this.tooglePauseAnimation.bind(this);
@@ -33,11 +35,10 @@ export class ChartDOM extends Component {
 	}
 
 	RenderBPM(bolo = 0, rpeakCount = 1, limite = 500, arr = []) {
-		const { route } = this.props;
-		let params = route.params;
-		console.log(params);
+		
+		console.log(this.state.params);
 		axios
-			.get("https://ecgremote.herokuapp.com/render?id=" + params["id"])
+			.get("https://ecgremote.herokuapp.com/render?id=" +this.state.params["id"])
 			.then((result) => {
 				for (
 					var i = 0;
@@ -144,6 +145,7 @@ export class ChartDOM extends Component {
 	render() {
 		return (
 			<ScrollView>
+                <Text>Resolution {this.state.params["resolution"]} - Sampling Rate {this.state.params["sampling_rate"]}</Text>
 				<Frag onClick={this.tooglePauseAnimation}>
 					{this.state.Another}
 
