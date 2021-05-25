@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimensions, Text, View } from "react-native";
+import { Dimensions, View } from "react-native";
 
 import axios from "axios";
 
@@ -40,7 +40,7 @@ export class ChartDOM extends Component {
         const {route} = this.props;
         let params = route.params
         console.log(params)
-		axios.get("http://localhost:3333/render?id="+params["id"]).then((result) => {
+		axios.get("https://ecgremote.herokuapp.com/render?id="+params["id"]).then((result) => {
 			for (
 				var i = 0;
 				i < result.data.res.filtered.length;
@@ -146,7 +146,6 @@ export class ChartDOM extends Component {
 	render() {
 		return (
 			<ScrollView>
-				<Text>SAAS</Text>
 
 				<Frag onClick={this.tooglePauseAnimation}>
 					{this.state.Another}

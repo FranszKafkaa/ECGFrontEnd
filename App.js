@@ -1,8 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Text, SafeAreaView, Button } from "react-native";
+import { SafeAreaView } from "react-native";
 
-import Header from "./Components/Head/Header";
 import ChartDOM from "./Components/Chart/chart";
 
 import { NavigationContainer } from "@react-navigation/native";

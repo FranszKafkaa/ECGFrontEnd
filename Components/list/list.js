@@ -16,7 +16,7 @@ export default class List extends Component {
 
     getData(){
         console.log("passo")
-        axios.get("http://localhost:3333/list_all").then(result => {
+        axios.get("https://ecgremote.herokuapp.com/list_all").then(result => {
             const {data} = result
 
             var arr = []
