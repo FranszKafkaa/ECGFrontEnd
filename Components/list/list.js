@@ -14,6 +14,11 @@ export default class List extends Component {
 		this.getData();
 	}
 
+    format_data(data){
+        let date = new Date(data)
+
+        return `${date.getDay()}/${date.getMonth()}/${date.getUTCFullYear()}`
+    }
 	getData() {
 		console.log("passo");
 		axios.get("https://ecgremote.herokuapp.com/list_all").then((result) => {
@@ -24,7 +29,7 @@ export default class List extends Component {
 			const { navigation } = this.props;
 
 			data.forEach((element) => {
-				console.log(element);
+                //this.format_data(element["datetime"])
 
 				arr.push(
 					<>
@@ -49,8 +54,20 @@ export default class List extends Component {
 									})
 								}
 							>
-								{element["datetime"]}
+                                {element["title"]}
+								
 							</DataTable.Cell>
+                            <DataTable.Cell onPress={() =>
+									navigation.navigate("chart", {
+										id: element["_id"],
+                                        resolution: element["resolution"],
+                                        sampling_rate: element["sampling_rate"]
+									})
+								}>
+                                    {this.format_data(element["datetime"])}
+                                    
+                                
+                            </DataTable.Cell>
 						</DataTable.Row>
 					</>
 				);
@@ -65,10 +82,10 @@ export default class List extends Component {
 				<DataTable>
 					<DataTable.Header>
 						<DataTable.Title>Paciente</DataTable.Title>
-						<DataTable.Title numeric sortDirection="descending">
-							Data
+						<DataTable.Title>
+							Titulo do Exame
 						</DataTable.Title>
-						<DataTable.Title></DataTable.Title>
+						<DataTable.Title>Data</DataTable.Title>
 					</DataTable.Header>
 
 					{this.state.data}
