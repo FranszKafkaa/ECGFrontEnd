@@ -64,7 +64,7 @@ export default class List extends Component {
 			<View>
 				<DataTable>
 					<DataTable.Header>
-						<DataTable.Title>IDExame</DataTable.Title>
+						<DataTable.Title>Paciente</DataTable.Title>
 						<DataTable.Title numeric sortDirection="descending">
 							Data
 						</DataTable.Title>
