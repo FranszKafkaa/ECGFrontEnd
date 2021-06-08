@@ -65,7 +65,7 @@ export class ChartDOM extends Component {
 							let bpm = (
 								<BPM>
 									<TextView>
-										BPM <br /> {parseInt(result.data.res.bpm[rpeakCount - 1])}
+										BPM {parseInt(result.data.res.bpm[rpeakCount - 1])}
 									</TextView>
 								</BPM>
 							);
